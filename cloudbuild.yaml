@@ -5,3 +5,5 @@ steps:
   args: ['push', 'gcr.io/My First Project/My First Project:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'My First Project', '--image=gcr.io/cloud-run-cd-example/My First Project:$SHORT_SHA', '--region=us-central1']
+options:
+logging: CLOUD_LOGGING_ONLY
