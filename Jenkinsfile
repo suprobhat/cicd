@@ -27,7 +27,7 @@ spec:
         }
     }
     stages {
-        stage('docker login') {
+        stage('docker login & push') {
             steps {
                 container('docker') {
                     
@@ -35,7 +35,10 @@ spec:
                      sh '''
                      docker login -u $uname -p $pass
                      docker build -t nodjs .
+                     docker tag nodjs suprobhat1997/jenkins:nodjs-v1
                      docker images
+                     docker push nodjs suprobhat1997/jenkins:nodjs-v1
+                      
                      '''
                      
                       }
