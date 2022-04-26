@@ -32,7 +32,11 @@ spec:
                 container('docker') {
                     
                      withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'uname')]) {
-                     sh 'docker login -u $uname -p $pass'
+                     sh '''
+                     docker login -u $uname -p $pass
+                     docker build -t nodjs .
+                     docker images
+                     '''
                      
                       }
                 }   
