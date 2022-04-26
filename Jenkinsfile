@@ -37,7 +37,7 @@ spec:
                      docker build -t nodjs .
                      docker tag nodjs suprobhat1997/jenkins:nodjs-v1
                      docker images
-                     docker push nodjs suprobhat1997/jenkins:nodjs-v1
+                     docker push suprobhat1997/jenkins:nodjs-v1
                       
                      '''
                      
